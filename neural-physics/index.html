@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Neural Physics: Project Description">
+  <meta name="keywords" content="Robotics, Physics, Neural Networks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural Physics</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .title.is-1 {
+        font-family: 'Google Sans', sans-serif;
+        font-weight: 700;
+    }
+    .publication-title {
+        font-family: 'Google Sans', sans-serif;
+    }
+    .publication-authors {
+        font-family: 'Google Sans', sans-serif;
+    }
+    .publication-venue {
+        color: #555;
+        width: 100%;
+        font-weight: bold;
+    }
+    .publication-links {
+        margin-top: 20px;
+    }
+    .link-block a {
+        margin: 5px;
+    }
+    .teaser .hero-body {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+    .teaser {
+        font-family: 'Google Sans', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Contact-Aware Neural Dynamics</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://changwei-jing.github.io/">Changwei Jing</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://textzip.github.io/about/">Jai Krishna Bandi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jianglongye.com/">Jianglong Ye</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://rockyduan.com/">Yan Duan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiaolonw.github.io/">Xiaolong Wang</a><sup>1†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yswhynot.github.io/">Sha Yi</a><sup>1†</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC San Diego,</span>
+            <span class="author-block"><sup>2</sup>Amazon FAR (Frontier AI & Robotics)</span>
+          </div>
+
+          <div class="is-size-6">
+            <span class="author-block"><sup>†</sup>Equal advising</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link.
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            High-fidelity physics simulation is essential for scalable robotic learning, but the sim-to-real gap persists, 
+            especially for tasks involving complex, dynamic, and discontinuous interactions like physical contacts[cite: 19]. 
+            Explicit system identification, which tunes explicit simulator parameters, is often insufficient to align the 
+            intricate, high-dimensional, and state-dependent dynamics of the real world.
+          </p>
+          <p>
+            To overcome this, we propose an <b>implicit sim-to-real alignment framework</b> that learns to directly 
+            align the simulator's dynamics with contact information. Our method treats the off-the-shelf 
+            simulator as a base prior and learns a <b>contact-aware neural dynamics model</b> to refine simulated 
+            states using real-world observations. 
+          </p>
+          <p>
+            We show that using <b>tactile contact information</b> from robotic hands can effectively model the 
+            non-smooth discontinuities inherent in contact-rich tasks, resulting in a neural dynamics model 
+            grounded by real-world data. We demonstrate that this learned forward dynamics model improves 
+            state prediction accuracy and can be effectively used to predict policy performance and refine policies 
+            trained purely in standard simulators, offering a scalable, data-driven approach to sim-to-real alignment.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          <p>Video placeholder</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{jing2026neural,
+  title={Neural Physics},
+  author={Jing, Changwei and others},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
