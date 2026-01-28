@@ -1,6 +1,11 @@
 /* Import Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+:root {
+  --text-offset: -7px;       
+  --image-text-gap: 40px;       
+}
+
 a {
   color: #1772d0;
   text-decoration: none;
@@ -78,4 +83,35 @@ span.highlight {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+.publication-image {
+  width: 240px;
+  height: 134px;
+  object-fit: fill;
+  border-style: none;
+}
+
+/* Research item flexbox layout */
+.research-item {
+  display: flex !important;
+  align-items: flex-start;
+  gap: var(--image-text-gap);
+  padding: 20px 0;
+  border: 0;
+}
+
+.research-item td {
+  display: block;
+  padding: 0 !important;
+}
+
+.research-item .image-cell {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.research-item .content-cell {
+  flex: 1;
+  margin-top: var(--text-offset);
 }
