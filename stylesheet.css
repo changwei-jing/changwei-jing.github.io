@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-  --text-offset: -7px;       
-  --image-text-gap: 40px;       
+  --text-offset: -7px;
+  --image-text-gap: 40px;
+  --content-width: 560px;
 }
 
 a {
@@ -79,10 +80,10 @@ span.highlight {
 }
 
 .colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
 }
 
 .publication-image {
@@ -112,6 +113,6 @@ span.highlight {
 }
 
 .research-item .content-cell {
-  flex: 1;
+  width: var(--content-width);
   margin-top: var(--text-offset);
 }
