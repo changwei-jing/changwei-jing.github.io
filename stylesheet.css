@@ -5,6 +5,8 @@
   --text-offset: -7px;
   --image-text-gap: 40px;
   --content-width: 560px;
+  --image-width: 240px;
+  --main-width: calc(var(--image-width) + var(--image-text-gap) + var(--content-width));
 }
 
 a {
@@ -87,7 +89,7 @@ span.highlight {
 }
 
 .publication-image {
-  width: 240px;
+  width: var(--image-width);
   height: 134px;
   object-fit: fill;
   border-style: none;
@@ -108,7 +110,7 @@ span.highlight {
 }
 
 .research-item .image-cell {
-  width: 240px;
+  width: var(--image-width);
   flex-shrink: 0;
 }
 
