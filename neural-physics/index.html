@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Contact-Aware Neural Dynamics: Project Description">
+  <meta name="description" content="Contact-Aware Neural Dynamics: Project Description">
   <meta name="keywords" content="Robotics, Physics, Neural Networks, Tactile Sensing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact-Aware Neural Dynamics</title>
@@ -18,121 +18,142 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script> -->
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+
   <style>
     body {
       font-family: 'Noto Sans', sans-serif;
     }
+
     .title.is-1 {
-        font-family: 'Google Sans', sans-serif;
-        font-weight: 700;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
     }
+
     .publication-title {
-        font-family: 'Google Sans', sans-serif;
+      font-family: 'Google Sans', sans-serif;
     }
+
     .publication-authors {
-        font-family: 'Google Sans', sans-serif;
+      font-family: 'Google Sans', sans-serif;
     }
+
     .publication-venue {
-        color: #555;
-        width: 100%;
-        font-weight: bold;
+      color: #555;
+      width: 100%;
+      font-weight: bold;
     }
+
     .publication-links {
-        margin-top: 20px;
+      margin-top: 20px;
     }
+
     .link-block a {
-        margin: 5px;
+      margin: 5px;
     }
+
     .teaser .hero-body {
-        padding-top: 0;
-        padding-bottom: 40px;
+      padding-top: 0;
+      padding-bottom: 40px;
     }
+
     .teaser {
-        font-family: 'Google Sans', sans-serif;
+      font-family: 'Google Sans', sans-serif;
+    }
+
+    .rounded-video {
+      border-radius: 15px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded-video video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
     }
   </style>
 </head>
+
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Contact-Aware Neural Dynamics</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://changwei-jing.github.io/">Changwei Jing</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://textzip.github.io/about/">Jai Krishna Bandi</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://jianglongye.com/">Jianglong Ye</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://rockyduan.com/">Yan Duan</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://xiaolonw.github.io/">Xiaolong Wang</a><sup>1†</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://yswhynot.github.io/">Sha Yi</a><sup>1†</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>UC San Diego,</span>
-            <span class="author-block"><sup>2</sup>Amazon FAR (Frontier AI & Robotics)</span>
-          </div>
-
-          <div class="is-size-6">
-            <span class="author-block"><sup>†</sup>Equal advising</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2601.12796"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+            <h1 class="title is-1 publication-title">Contact-Aware Neural Dynamics</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://changwei-jing.github.io/">Changwei Jing</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://textzip.github.io/about/">Jai Krishna Bandi</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jianglongye.com/">Jianglong Ye</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://rockyduan.com/">Yan Duan</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://xiaolonw.github.io/">Xiaolong Wang</a><sup>1†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://yswhynot.github.io/">Sha Yi</a><sup>1†</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>UC San Diego,</span>
+              <span class="author-block"><sup>2</sup>Amazon FAR (Frontier AI & Robotics)</span>
+            </div>
+
+            <div class="is-size-6">
+              <span class="author-block"><sup>†</sup>Equal advising</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2601.12796" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- arXiv Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2601.12796"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2601.12796" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link.
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link.
               <span class="link-block">
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
@@ -142,67 +163,258 @@
                   <span>Code</span>
                   </a>
               </span> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            High-fidelity physics simulation is essential for scalable robotic learning, but the sim-to-real gap persists, 
-            especially for tasks involving complex, dynamic, and discontinuous interactions like physical contacts[cite: 19]. 
-            Explicit system identification, which tunes explicit simulator parameters, is often insufficient to align the 
-            intricate, high-dimensional, and state-dependent dynamics of the real world.
-          </p>
-          <p>
-            To overcome this, we propose an <b>implicit sim-to-real alignment framework</b> that learns to directly 
-            align the simulator's dynamics with contact information. Our method treats the off-the-shelf 
-            simulator as a base prior and learns a <b>contact-aware neural dynamics model</b> to refine simulated 
-            states using real-world observations. 
-          </p>
-          <p>
-            We show that using <b>tactile contact information</b> from robotic hands can effectively model the 
-            non-smooth discontinuities inherent in contact-rich tasks, resulting in a neural dynamics model 
-            grounded by real-world data. We demonstrate that this learned forward dynamics model improves 
-            state prediction accuracy and can be effectively used to predict policy performance and refine policies 
-            trained purely in standard simulators, offering a scalable, data-driven approach to sim-to-real alignment.
-          </p>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="rounded-video">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="video/slides.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
-    </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-          <p>Video placeholder</p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              High-fidelity physics simulation is essential for scalable robotic learning, but the sim-to-real gap
+              persists,
+              especially for tasks involving complex, dynamic, and discontinuous interactions like physical
+              contacts.
+              Explicit system identification, which tunes explicit simulator parameters, is often insufficient to align
+              the
+              intricate, high-dimensional, and state-dependent dynamics of the real world.
+            </p>
+            <p>
+              To overcome this, we propose an <b>implicit sim-to-real alignment framework</b> that learns to directly
+              align the simulator's dynamics with contact information. Our method treats the off-the-shelf
+              simulator as a base prior and learns a <b>contact-aware neural dynamics model</b> to refine simulated
+              states using real-world observations.
+            </p>
+            <p>
+              We show that using <b>tactile contact information</b> from robotic hands can effectively model the
+              non-smooth discontinuities inherent in contact-rich tasks, resulting in a neural dynamics model
+              grounded by real-world data. We demonstrate that this learned forward dynamics model improves
+              state prediction accuracy and can be effectively used to predict policy performance and refine policies
+              trained purely in standard simulators, offering a scalable, data-driven approach to sim-to-real alignment.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Tactile Sensor in Grasping</h2>
+          <div class="rounded-video">
+            <video controls autoplay loop muted playsinline>
+              <source src="video/demo_success_mustard_1_combined.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Architecture Overview</h2>
+          <div class="rounded-video">
+            <video controls autoplay muted playsinline>
+              <source src="video/architecture_slow.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <br>
+          <div class="content has-text-justified">
+            <p>
+              <b>Model Architecture:</b> The model utilizes a multi-modal encoder to fuse object states and robot
+              actions with a Contact Predictor that infers future contact events, which then condition a Diffusion-UNet
+              to generate physically-consistent future pose increments.
+            </p>
+            <p>
+              <b>Sim-to-Real Alignment:</b> The framework follows a two-stage data pipeline: it first learns
+              contact-induced physical priors from large-scale simulation, then fine-tunes with real Tactile Sensor data
+              to implicitly align simulated states with real-world contact patterns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Implicit Sim-to-Real Alignment</h2>
+
+          <!-- Column Headers -->
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <p class="is-size-5"><b>Real World</b></p>
+            </div>
+            <div class="column">
+              <p class="is-size-5"><b>Neural Dynamics</b></p>
+            </div>
+            <div class="column">
+              <p class="is-size-5"><b>Physics Simulator</b></p>
+            </div>
+          </div>
+
+          <!-- Row 1: Mustard Robust -->
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_2/aligned/mustard_real_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_2/aligned/mustard_neural_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_2/aligned/mustard_physics_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-variable is-1">
+            <div class="column is-full">
+              <p class="has-text-centered"><b>Marginal Grasping (Mustard Bottle):</b> Precise alignment for unstable
+                grasping interactions.</p>
+            </div>
+          </div>
+
+          <!-- Row 2: Cleanser Robust -->
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_1/aligned/cleanser_real_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_1/aligned/cleanser_neural_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_1/aligned/cleanser_physics_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-variable is-1">
+            <div class="column is-full">
+              <p class="has-text-centered"><b>Marginal Grasping (Bleach Cleanser):</b> Precise alignment for unstable
+                grasping interactions.</p>
+            </div>
+          </div>
+
+          <!-- Row 3: Mustard Marginal -->
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_1/aligned/mustard_real_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_1/aligned/mustard_neural_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/mustard_success_1/aligned/mustard_physics_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-variable is-1">
+            <div class="column is-full">
+              <p class="has-text-centered"><b>Robust Grasping (Mustard Bottle):</b> Stable alignment for successful
+                grasping.</p>
+            </div>
+          </div>
+
+          <!-- Row 4: Cleanser Marginal -->
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_2/aligned/cleanser_real_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_2/aligned/cleanser_neural_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rounded-video">
+                <video controls autoplay loop muted playsinline>
+                  <source src="video/cleanser_success_2/aligned/cleanser_physics_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-variable is-1">
+            <div class="column is-full">
+              <p class="has-text-centered"><b>Robust Grasping (Bleach Cleanser):</b> Consistent alignment for reliable
+                manipulation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{jing2026contactawareneuraldynamics,
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{jing2026contactawareneuraldynamics,
       title={Contact-Aware Neural Dynamics}, 
       author={Changwei Jing and Jai Krishna Bandi and Jianglong Ye and Yan Duan and Pieter Abbeel and Xiaolong Wang and Sha Yi},
       year={2026},
@@ -211,20 +423,20 @@
       primaryClass={cs.RO},
       url={https://arxiv.org/abs/2601.12796}, 
 }</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        Website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-      </p>
     </div>
-  </div>
-</footer>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
 
 </body>
-</html>
 
+</html>
