@@ -2,192 +2,287 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Your Name</title>
-  <meta name="author" content="Your Name">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Changwei Jing</title>
+
+    <meta name="author" content="Changwei Jing">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
 </head>
 
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+    <!-- Mobile image/video modal -->
+    <div id="media-modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+        <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;"
+            onclick="closeModal()">&times;</span>
+        <img id="modal-img" style="max-width:90%; max-height:90%; border-radius:12px;" />
+        <video id="modal-video" style="max-width:90%; max-height:90%; border-radius:12px; display:none;" controls
+            autoplay loop muted></video>
+    </div>
 
-          <!-- Name and Introduction -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-                <td style="padding:2.5%;width:70%;vertical-align:middle">
-                  <p class="name" style="text-align: center;">
-                    Changwei Jing
-                  </p>
-                  <p>
-                    I am a second-year M.S. student in ECE at UC San Diego, working with Prof. <a
-                      href="https://xiaolonw.github.io/">Xiaolong Wang</a>.
-                    Previously, I received my B.S. in Physics from Shanghai Jiao Tong University.
-                    I am broadly interested in robotics, with a focus on dexterous manipulation,
-                    driven by the goal of enabling robotic hands to physically perform complex tasks.
-                  </p>
-                  <p style="text-align:center">
-                    <a href="c1jing@ucsd.edu">Email</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/hs475">GitHub</a> &nbsp;/&nbsp;
-                    <a href="https://x.com/cwj99770123">Twitter</a>
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:30%;max-width:37%">
-                  <a href="images/jcw.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;"
-                      alt="profile photo" src="images/jcw.png" class="hoverZoomLink"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <script>
+        function openModal(element) {
+            if (window.innerWidth > 768) return;
+            var modal = document.getElementById('media-modal');
+            var modalImg = document.getElementById('modal-img');
+            var modalVideo = document.getElementById('modal-video');
 
-          <!-- Publications Section -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Research</h2>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            var video = element.querySelector('video');
+            var img = element.querySelector('img');
 
-          <!-- Publication List -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
+            if (video) {
+                modalImg.style.display = 'none';
+                modalVideo.style.display = 'block';
+                modalVideo.src = video.querySelector('source').src;
+            } else if (img) {
+                modalVideo.style.display = 'none';
+                modalImg.style.display = 'block';
+                modalImg.src = img.src;
+            }
+            modal.style.display = 'flex';
+        }
 
+        function closeModal() {
+            var modal = document.getElementById('media-modal');
+            var modalVideo = document.getElementById('modal-video');
+            modalVideo.pause();
+            modal.style.display = 'none';
+        }
 
+        document.getElementById('media-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
 
-              <!-- Contact-Aware Neural Dynamics -->
-              <tr>
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/align.gif" alt="contact-aware-neural-dynamics"
-                    style="border-style: none; width: 200px; height: 120px; object-fit: fill;">
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <span class="papertitle" style="color: #1772d0;">Contact-Aware Neural Dynamics</span>
-                  <br>
-                  <span style="color: black;">Changwei Jing</span>,
-                  <a href="https://textzip.github.io/about/">Jai Krishna Bandi</a>,
-                  <a href="https://jianglongye.com/">Jianglong Ye</a>,
-                  <a href="http://rockyduan.com/">Yan Duan</a>,
-                  <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>,
-                  <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>&#8224;,
-                  <a href="https://yswhynot.github.io/">Sha Yi</a>&#8224;
-                  <br>
-                  <em>Preprint</em>
-                  <br>
-                  <a href="https://arxiv.org/abs/2601.12796">arXiv</a>
-                  /
-                  <a href="https://changwei-jing.github.io/neural-physics">website</a>
-                </td>
-              </tr>
+        // Add touch event for mobile - only trigger on tap, not swipe
+        document.addEventListener('DOMContentLoaded', function () {
+            var thumbnails = document.querySelectorAll('.paper-thumbnail');
+            thumbnails.forEach(function (thumb) {
+                var touchStartX, touchStartY, touchStartTime;
 
-              <!-- Switchable Neural Teleoperation -->
-              <tr>
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/neural-teleop.gif" alt="neural-teleop"
-                    style="border-style: none; width: 200px; height: 120px; object-fit: fill;">
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <span class="papertitle" style="color: #1772d0;">Switchable Neural Teleoperation</span>
-                  <br>
-                  <a href="https://jianglongye.com/">Jianglong Ye*</a>,
-                  <span style="color: black;">Changwei Jing*</span>,
-                  <a href="https://www.linkedin.com/in/kezhou-chen-a3a821302/">Kezhou Chen</a>,
-                  <a href="https://keyiw.github.io/">Keyi Wang</a>,
-                  <a href="https://yswhynot.github.io/">Sha Yi</a>,
-                  <a href="https://maureenzou.github.io/">Xueyan Zou</a>,
-                  <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
-                  <br>
-                  <em>Preprint</em>
-                  <br>
-                  <a href="https://drive.google.com/file/d/1uyMfP20einc6HOpOgVUHsK1qxo8Vdb5Q/view?usp=sharing">paper</a>
-                  /
-                  <a href="https://drive.google.com/file/d/1_Xb3KfSVQHEhdwL4i4nlJtcih30ZXVKE/view?usp=sharing">video</a>
-                </td>
-              </tr>
+                thumb.addEventListener('touchstart', function (e) {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    touchStartTime = Date.now();
+                });
 
-              <!-- A Study of Dexterous Hand Degrees-of-Freedom -->
-              <tr>
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/dexhand_dof.gif" alt="dexhand_dof"
-                    style="border-style: none; width: 200px; height: 120px; object-fit: fill;">
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <span class="papertitle" style="color: #1772d0;">A Study of Dexterous Hand Degrees-of-Freedom for
-                    Teleoperation and Imitation Learning</span>
-                  <br>
-                  <a href="https://www.linkedin.com/in/kezhou-chen-a3a821302/">Kezhou Chen*</a>,
-                  <span style="color: black;">Changwei Jing*</span>,
-                  <a href="https://jaking98.github.io/">Chengzhe Jia</a>,
-                  <a href="https://www.episodeyang.com/">Ge Yang</a>,
-                  <a href="https://yswhynot.github.io/">Sha Yi</a>,
-                  <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
-                  <br>
-                  <em>Preprint</em>, 2025
-                  <br>
-                </td>
-              </tr>
+                thumb.addEventListener('touchend', function (e) {
+                    if (window.innerWidth <= 768) {
+                        var touchEndX = e.changedTouches[0].clientX;
+                        var touchEndY = e.changedTouches[0].clientY;
+                        var touchDuration = Date.now() - touchStartTime;
+                        var deltaX = Math.abs(touchEndX - touchStartX);
+                        var deltaY = Math.abs(touchEndY - touchStartY);
 
-              <!-- From Power to Precision -->
-              <tr>
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/power-to-precision.gif" alt="power-to-precision"
-                    style="border-style: none; width: 200px; height: 120px; object-fit: fill;">
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <span class="papertitle" style="color: #1772d0;">From Power to Precision: Learning Fine-grained
-                    Dexterity for Multi-fingered Robotic Hands</span>
-                  <br>
-                  <a href="https://jianglongye.com/">Jianglong Ye*</a>,
-                  <a href="https://i-am-future.github.io/">Lai Wei*</a>,
-                  <a href="https://luccachiang.github.io/">Guangqi Jiang</a>,
-                  <span style="color: black;">Changwei Jing</span>,
-                  <a href="https://maureenzou.github.io/">Xueyan Zou</a>
-                  <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
-                  <br>
-                  <em>arXiv preprint (arXiv)</em>, 2025
-                  <br>
-                  <a href="https://www.arxiv.org/abs/2511.13710">arXiv</a>
-                  /
-                  <a href="https://youtu.be/02yt3pbn1nI">video</a>
-                  /
-                  <a href="https://jianglongye.com/power-to-precision">website</a>
-                  /
-                  <a href="https://x.com/jianglong_ye/status/1990540705035624817">twitter</a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-
-          <!-- Footer -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
+                        // Only open if it's a quick tap with minimal movement
+                        if (deltaX < 15 && deltaY < 15 && touchDuration < 300) {
+                            e.preventDefault();
+                            openModal(this);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <table
+        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
                 <td style="padding:0px">
-                  <br>
-                  <p style="text-align:right;font-size:10px;transform:scale(0.8);transform-origin:right center;">
-                    <a href="https://github.com/jonbarron/jonbarron.github.io">website template</a>
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                                    <p style="text-align:center">
+                                        <name>Changwei Jing</name>
+                                    </p>
+                                    <p>I am a second-year M.S. student in ECE at UC San Diego, working with Prof. <a
+                                            href="https://xiaolonw.github.io/">Xiaolong Wang</a>.
+                                        Previously, I received my B.S. in Physics from Shanghai Jiao Tong University.
+                                    </p>
+                                    <p>
+                                        I am broadly interested in robotics, with a focus on dexterous manipulation,
+                                        driven by the goal of enabling robotic hands to physically perform complex
+                                        tasks.
+                                    </p>
+                                    <p style="text-align:center" class="social-icons">
+                                        <a href="mailto:c1jing@ucsd.edu" title="Email"><i
+                                                class="fas fa-envelope"></i></a>
+                                        <a href="https://x.com/cwj99770123" target="_blank" title="Twitter"><i
+                                                class="fab fa-x-twitter"></i></a>
+                                        <a href="images/CV.pdf" title="CV"><i class="fas fa-file-alt"></i></a>
+                                    </p>
+                                </td>
+                                <td style="padding:2.5%;width:40%;max-width:40%">
+                                    <a href="images/jcw.png"><img style="width:100%;max-width:100%" alt="profile photo"
+                                            src="images/jcw.png" class="hoverZoomLink"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:20px;width:100%;vertical-align:middle">
+                                    <heading>Research</heading>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+
+                            <!-- Contact-Aware Neural Dynamics -->
+                            <tr>
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="paper-thumbnail">
+                                        <span class="conference-badge">arXiv</span>
+                                        <img src="images/align.gif" alt="contact-aware-neural-dynamics" width="180"
+                                            height="120" style="object-fit: fill;">
+                                    </div>
+                                </td>
+                                <td width="75%" valign="middle">
+                                    <a href="https://changwei-jing.github.io/neural-physics">
+                                        <papertitle>Contact-Aware Neural Dynamics</papertitle>
+                                    </a>
+                                    <br>
+                                    <strong>Changwei Jing</strong>,
+                                    <a href="https://textzip.github.io/about/">Jai Krishna Bandi</a>,
+                                    <a href="https://jianglongye.com/">Jianglong Ye</a>,
+                                    <a href="http://rockyduan.com/">Yan Duan</a>,
+                                    <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>,
+                                    <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>&#8224;,
+                                    <a href="https://yswhynot.github.io/">Sha Yi</a>&#8224;
+                                    <br>
+                                    <em>Preprint</em>
+                                    <br>
+                                    <a href="https://changwei-jing.github.io/neural-physics">Website</a>
+                                    /
+                                    <a href="https://arxiv.org/abs/2601.12796">arXiv</a>
+                                </td>
+                            </tr>
+
+                            <!-- Switchable Neural Teleoperation -->
+                            <tr>
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="paper-thumbnail">
+                                        <span class="conference-badge">ICRA</span>
+                                        <img src="images/neural-teleop.gif" alt="neural-teleop" width="180" height="120"
+                                            style="object-fit: fill;">
+                                    </div>
+                                </td>
+                                <td width="75%" valign="middle">
+                                    <a href="">
+                                        <papertitle>Switchable Neural Teleoperation</papertitle>
+                                    </a>
+                                    <br>
+                                    <a href="https://jianglongye.com/">Jianglong Ye*</a>,
+                                    <strong>Changwei Jing*</strong>,
+                                    <a href="https://www.linkedin.com/in/kezhou-chen-a3a821302/">Kezhou Chen</a>,
+                                    <a href="https://keyiw.github.io/">Keyi Wang</a>,
+                                    <a href="https://yswhynot.github.io/">Sha Yi</a>,
+                                    <a href="https://maureenzou.github.io/">Xueyan Zou</a>,
+                                    <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
+                                    <br>
+                                    <em>International Conference on Robotics and Automation
+                                        (</em><strong>ICRA</strong><em>), 2026</em>
+                                    <br>
+                                    <a
+                                        href="https://drive.google.com/file/d/1uyMfP20einc6HOpOgVUHsK1qxo8Vdb5Q/view?usp=sharing">Paper</a>
+                                    /
+                                    <a
+                                        href="https://drive.google.com/file/d/1_Xb3KfSVQHEhdwL4i4nlJtcih30ZXVKE/view?usp=sharing">Video</a>
+                                </td>
+                            </tr>
+
+                            <!-- A Study of Dexterous Hand Degrees-of-Freedom -->
+                            <tr>
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="paper-thumbnail">
+                                        <span class="conference-badge">arXiv</span>
+                                        <img src="images/dexhand_dof.gif" alt="dexhand_dof" width="180" height="120"
+                                            style="object-fit: fill;">
+                                    </div>
+                                </td>
+                                <td width="75%" valign="middle">
+                                    <a href="">
+                                        <papertitle>A Study of Dexterous Hand Degrees-of-Freedom for Teleoperation and
+                                            Imitation Learning</papertitle>
+                                    </a>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/kezhou-chen-a3a821302/">Kezhou Chen*</a>,
+                                    <strong>Changwei Jing*</strong>,
+                                    <a href="https://jaking98.github.io/">Chengzhe Jia</a>,
+                                    <a href="https://www.episodeyang.com/">Ge Yang</a>,
+                                    <a href="https://yswhynot.github.io/">Sha Yi</a>,
+                                    <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
+                                    <br>
+                                    <em>Preprint</em>, 2025
+                                </td>
+                            </tr>
+
+                            <!-- From Power to Precision -->
+                            <tr>
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="paper-thumbnail">
+                                        <span class="conference-badge">arXiv</span>
+                                        <img src="images/power-to-precision.gif" alt="power-to-precision" width="180"
+                                            height="120" style="object-fit: fill;">
+                                    </div>
+                                </td>
+                                <td width="75%" valign="middle">
+                                    <a href="https://jianglongye.com/power-to-precision">
+                                        <papertitle>From Power to Precision: Learning Fine-grained Dexterity for
+                                            Multi-fingered Robotic Hands</papertitle>
+                                    </a>
+                                    <br>
+                                    <a href="https://jianglongye.com/">Jianglong Ye*</a>,
+                                    <a href="https://i-am-future.github.io/">Lai Wei*</a>,
+                                    <a href="https://luccachiang.github.io/">Guangqi Jiang</a>,
+                                    <strong>Changwei Jing</strong>,
+                                    <a href="https://maureenzou.github.io/">Xueyan Zou</a>,
+                                    <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
+                                    <br>
+                                    <em>arXiv preprint</em>, 2025
+                                    <br>
+                                    <a href="https://jianglongye.com/power-to-precision">Website</a>
+                                    /
+                                    <a href="https://www.arxiv.org/abs/2511.13710">arXiv</a>
+                                    /
+                                    <a href="https://youtu.be/02yt3pbn1nI">Video</a>
+                                    /
+                                    <a href="https://x.com/jianglong_ye/status/1990540705035624817">Twitter</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:0px">
+                                    <br>
+                                    <p style="text-align:right;font-size:small;">
+                                        Inspired by <a href="https://jonbarron.info">Jon Barron</a>'s template. <br>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    </table>
 </body>
 
 </html>

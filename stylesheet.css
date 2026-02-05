@@ -1,81 +1,527 @@
-/* Import Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+/* Google Fonts - Inter for modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* CSS Variables for easy theming */
+:root {
+    --primary-color: #1a73e8;
+    --primary-hover: #1557b0;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --background: #ffffff;
+    --card-background: #f8f9fa;
+    --border-color: #e8eaed;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: 0.2s ease;
+    --max-width: 900px;
+    --border-radius: 12px;
+}
+
+/* Reset and Base */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--background);
+    margin: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
 a {
-  color: #1772d0;
-  text-decoration: none;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition);
 }
 
-a:focus,
-a:hover {
-  color: #f09228;
-  text-decoration: none;
+a:hover,
+a:focus {
+    color: var(--primary-hover);
+    text-decoration: underline;
 }
 
-body,
+/* Typography */
 td,
 th,
 tr,
 p,
-a {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  line-height: 1.6
+a,
+strong {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
 }
 
 strong {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
+    font-weight: 700;
 }
 
-h2 {
-  margin: 0;
-  font-weight: normal;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 22px;
+/* Name styling */
+name {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    display: block;
 }
 
-.papertitle {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+/* Section headings */
+heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--primary-color);
 }
 
-.name {
-  padding-top: 20px;
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 32px;
+/* Paper titles */
+papertitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
 }
 
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
+/* Profile photo */
+.hoverZoomLink {
+    border-radius: var(--border-radius);
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.hoverZoomLink:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Paper cards styling */
+table tr {
+    transition: background-color var(--transition);
+}
+
+/* Video and image styling */
+video,
+img {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+video {
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Hover zoom effect for paper thumbnails */
+td[style*="width:25%"] video,
+td[style*="width:25%"] img,
+td[width="25%"] video,
+td[width="25%"] img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+td[style*="width:25%"] video:hover,
+td[style*="width:25%"] img:hover,
+td[width="25%"] video:hover,
+td[width="25%"] img:hover {
+    transform: scale(2.5);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    position: relative;
+}
+
+video:hover,
+td img:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    color: var(--text-secondary);
+    font-size: 18px;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.social-icons a .ai {
+    font-size: 20px;
+}
+
+/* Experience section styling */
+table[width="90%"] p {
+    padding: 16px 20px;
+    margin: 12px 0;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+table[width="90%"] p:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+}
+
+/* Conference/venue tags */
+em {
+    color: var(--text-secondary);
+    font-style: normal;
+    font-weight: 400;
+}
+
+em strong {
+    font-weight: 700;
+}
+
+/* Conference badge on thumbnails */
+.paper-thumbnail {
+    position: relative;
+    display: inline-block;
+}
+
+.conference-badge {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    background: linear-gradient(135deg, var(--primary-color), #1557b0);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* Zoom button for mobile */
+.zoom-btn {
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .zoom-btn {
+        display: flex;
+    }
+}
+
+/* Oral highlight */
+font[color="red"] strong {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Footer */
+p[style*="font-size:small"] {
+    color: var(--text-secondary);
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Animation utilities */
+.one,
+.two {
+    width: 160px;
+    height: 160px;
+    position: relative;
 }
 
 .two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 span.highlight {
-  background-color: #ffffd0;
+    background-color: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
-.colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
+/* ========================================
+   RESPONSIVE DESIGN - Mobile Optimization
+   ======================================== */
+
+/* Tablets and smaller */
+@media screen and (max-width: 900px) {
+    body {
+        padding: 15px;
+    }
+
+    name {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    td,
+    th,
+    tr,
+    p,
+    a,
+    strong {
+        font-size: 14px;
+    }
+
+    name {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    heading {
+        font-size: 1.2rem;
+    }
+
+    papertitle {
+        font-size: 14px;
+    }
+
+    /* Stack profile section vertically */
+    table[style*="max-width:800px"]>tbody>tr>td>table:first-of-type>tbody>tr {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    table[style*="max-width:800px"]>tbody>tr>td>table:first-of-type>tbody>tr>td {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px !important;
+        text-align: center;
+    }
+
+    /* Profile photo on mobile */
+    table[style*="max-width:800px"]>tbody>tr>td>table:first-of-type>tbody>tr>td:last-child {
+        max-width: 180px !important;
+        margin-bottom: 15px;
+    }
+
+    /* Consistent padding for all content sections */
+    table[width="100%"] td,
+    table[style*="width:100%"] td {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* News section alignment */
+    table[width="90%"] {
+        width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Paper entries - stack vertically */
+    table>tbody>tr>td[style*="width:25%"],
+    table>tbody>tr>td[width="25%"] {
+        display: block;
+        width: 100% !important;
+        text-align: center;
+        padding: 15px 15px 5px !important;
+    }
+
+    table>tbody>tr>td[width="75%"],
+    table>tbody>tr>td[valign="middle"]:not([width="100%"]) {
+        display: block;
+        width: 100% !important;
+        padding: 5px 15px 20px !important;
+        text-align: left;
+    }
+
+    /* Videos on mobile */
+    video {
+        width: 100% !important;
+        max-width: 280px;
+        height: auto !important;
+    }
+
+    /* Images on mobile */
+    td img[width="180"] {
+        width: 100% !important;
+        max-width: 280px;
+        height: auto !important;
+    }
+
+    /* Social icons on mobile */
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    /* Disable hover zoom on mobile, use click modal instead */
+    td[style*="width:25%"] video:hover,
+    td[style*="width:25%"] img:hover,
+    td[width="25%"] video:hover,
+    td[width="25%"] img:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+    }
+
+    /* Paper thumbnail container on mobile */
+    .paper-thumbnail {
+        position: relative;
+    }
+
+    .paper-thumbnail video,
+    .paper-thumbnail img {
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+    }
+
+    .paper-thumbnail video:active,
+    .paper-thumbnail img:active {
+        opacity: 0.8;
+    }
+
+    /* Experience cards on mobile */
+    table[width="90%"] p {
+        padding: 14px 16px;
+        margin: 10px 0;
+    }
+
+    /* Footer on mobile */
+    p[style*="font-size:small"] {
+        text-align: center !important;
+        font-size: 12px;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    name {
+        font-size: 1.5rem;
+    }
+
+    heading {
+        font-size: 1.1rem;
+    }
+
+    td,
+    th,
+    tr,
+    p,
+    a,
+    strong,
+    papertitle {
+        font-size: 13px;
+    }
+
+    /* Tighter spacing */
+    table[style*="padding:20px"] td {
+        padding: 12px 8px !important;
+    }
+
+    p[style*="text-align:center"] a {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    video,
+    td img[width="180"] {
+        max-width: 100%;
+    }
+}
+
+/* Ensure tables don't overflow */
+table {
+    table-layout: auto;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 100% !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    video {
+        display: none;
+    }
 }
