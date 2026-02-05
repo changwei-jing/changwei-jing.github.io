@@ -15,6 +15,8 @@
     --transition: 0.2s ease;
     --max-width: 900px;
     --border-radius: 12px;
+    --gif-width: 200px;
+    --gif-height: 113px;
 }
 
 /* Reset and Base */
@@ -232,6 +234,12 @@ em strong {
     z-index: 5;
 }
 
+.paper-thumbnail img {
+    width: var(--gif-width);
+    height: var(--gif-height);
+    object-fit: fill;
+}
+
 /* Zoom button for mobile */
 .zoom-btn {
     display: none;
@@ -402,7 +410,7 @@ span.highlight {
     }
 
     /* Images on mobile */
-    td img[width="180"] {
+    td img[width="200"] {
         width: 100% !important;
         max-width: 280px;
         height: auto !important;
@@ -492,7 +500,7 @@ span.highlight {
     }
 
     video,
-    td img[width="180"] {
+    td img[width="200"] {
         max-width: 100%;
     }
 }
