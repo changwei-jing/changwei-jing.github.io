@@ -15,8 +15,8 @@
     --transition: 0.2s ease;
     --max-width: 900px;
     --border-radius: 12px;
-    --gif-width: 200px;
-    --gif-height: 113px;
+    --gif-width: 250px;
+    --gif-height: 142px;
 }
 
 /* Reset and Base */
@@ -234,10 +234,17 @@ em strong {
     z-index: 5;
 }
 
-.paper-thumbnail img {
+.paper-thumbnail img,
+.paper-thumbnail video {
     width: var(--gif-width);
     height: var(--gif-height);
     object-fit: fill;
+}
+
+/* Align text column to top with fixed offset */
+td[width="75%"] {
+    vertical-align: top !important;
+    padding-top: 15px !important;
 }
 
 /* Zoom button for mobile */
